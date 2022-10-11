@@ -498,3 +498,4 @@ const controlNav = function () {
 initHome();
 controlNav();
 initGlobal();
+console.log('wellcome to nhaccuatui made by mynguyen');
