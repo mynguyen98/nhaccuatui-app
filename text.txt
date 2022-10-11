@@ -1,0 +1,120 @@
+    //  Rendering Song to sidebar
+    // songView.render(song);
+    //   const markup1 = `
+    //   <div class="left-side-song-des">
+    //     <div class="left-side-img-container">
+    //       <img
+    //         src="${song.thumbnail}"
+    //         alt="Song play image"
+    //         class="left-side-img"
+    //       />
+    //     </div>
+    //     <a href="#" class="song-play-name common-link">${song.title}</a>
+    //     <a href="#" class="song-play-singer"
+    //       >
+    // ${song.artists
+    //   .map((artist, i) => {
+    //     return i === 0
+    //       ? `<span class="common-link">${artist.name},</span>`
+    //       : `<span class="common-link"> ${artist.name}</span>`;
+    //   })
+    //   .join('')}
+    //     </a>
+    //   </div>
+    //   ${
+    //     song.playlist
+    //       ? ` <a href="#" class="left-side-album">
+    //   Playlist: Playlist: ${song.playlist}
+    // </a>`
+    //       : ''
+    //   }
+    //   `;
+    //   const markup2 = `
+    //   <p class="time-song">${song.duration}</p>
+    //   `;
+    //   const audioMarkup = `
+    //   <audio
+    //     src="${song.streamUrl}"
+    //     preload="auto"
+    //   ></audio>
+    //   `;
+
+
+
+    // CONTROLPLAYLIST 
+      // clickToSong() {
+  //   window.addEventListener('click', e => {
+  //     let songListEl = e.target.closest('.song-item-content');
+  //     songListEl.addEventListener('click', e => {
+  //       console.log(e.target.className);
+  //       if (
+  //         e.target.className !== 'icon-more-option' &&
+  //         e.target.className !== 'fa-solid fa-ellipsis-vertical'
+  //       ) {
+  //         let itemEl = e.target.closest('.song-list-item--data');
+  //         let order = +itemEl.dataset.order;
+  //         console.log(order);
+
+  //         if (order !== 100) {
+  //           // e.target.closest('.song-list-item--data');
+  //           // let order = +e.target.closest('.song-list-item--data').dataset
+  //           //   .order;
+  //           this.currentIndex = +order;
+  //           // ? order : this.currentIndex;
+  //           // this.currentIndex = +song.dataset.order;
+  //           this.loadCurrentSong();
+  //         }
+  //         if (order === 100) {
+  //           // console.log(e.target.closest('.song-list-item'));
+  //           let key = itemEl.id;
+  //           console.log(key);
+  //           controlSong(key);
+  //         }
+  //       }
+  //     });
+  //   });
+  // },
+  // clickToSongWaiting(song) {
+  //   song.addEventListener('click', e => {
+  //     console.log(e.target.className);
+  //     if (
+  //       e.target.className !== 'icon-more-option' &&
+  //       e.target.className !== 'fa-solid fa-ellipsis-vertical'
+  //     ) {
+  //       // e.target.closest('.song-list-item--data');
+  //       this.currentWaiting = +e.target.closest('.queue-list').dataset.queue;
+  //       // this.currentIndex = +song.dataset.order;
+  //       console.log(this.currentIndex);
+  //       this.loadCurrentSong();
+  //     }
+  //   });
+  // },
+  // clickToSong1() {
+  //   playlistItem.addEventListener('click', e => {
+  //     console.log(e.target.matches('.song-item-content'));
+  //   });
+  // },
+
+  // addHandlerWaitingList() {
+  //   const waitingBtnsAdd = document.querySelectorAll(
+  //     '.song-option-item--waiting'
+  //   );
+  //   waitingBtnsAdd.forEach(watingBtnAdd => {
+  //     watingBtnAdd.addEventListener('click', e => {
+  //       this.isWaitings = true;
+  //       playlistWaiting.classList.remove('hidden');
+  //       const songOrder = +e.target.closest('.song-list-item').dataset.order;
+  //       const songAdded = model.state.sidePlaylist.songs[songOrder];
+  //       waitingSongView.renderWatingSong(songAdded, this.numSongWaiting);
+  //       let songListEl = document.querySelectorAll(
+  //         '.song-item-content--waiting'
+  //       );
+  //       this.waitingList.push(songAdded);
+
+  //       this.numSongWaiting++;
+  //       console.log(songListEl[this.numSongWaiting - 1]);
+  //       this.clickToSongWaiting(songListEl[this.numSongWaiting - 1]);
+  //       console.log(this.waitingList);
+  //     });
+  //   });
+  // },

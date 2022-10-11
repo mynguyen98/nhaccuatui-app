@@ -1,0 +1,2016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://i.rada.vn/data/image/2020/07/27/nhac-cua-tui-200.png" type="image/x-icon">
+    <link rel="stylesheet" href="/index.d046a61c.css">
+    <link rel="stylesheet" href="/index.e0606c76.css">
+    <link rel="stylesheet" href="/index.34df27b5.css">
+    <link rel="stylesheet" href="/index.27e45105.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script> -->
+    <!-- <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script> -->
+    <script src="https://kit.fontawesome.com/19cac5b6dc.js" crossorigin="anonymous" defer=""></script>
+    <!-- <script type="module" defer src="./src/js/slider.js"></script> -->
+    <script src="/index.e37f48ea.js" defer=""></script>
+    <!-- <script type="module" defer src="./dist/bundle.js"></script> -->
+    <title>NhacCuaTui</title>
+  </head>
+  <body>
+    <div class="overlay hidden">
+      <div class="message-vip">
+        <button class="btn--close-modal">&times;</button>
+        <div class="vip-notice">
+          <div class="vip-notice-image">
+            <img src="https://stc-id.nixcdn.com/v11/images/icon-mrtui-alert.png" alt="">
+          </div>
+          <div class="vip-notice-mess">
+            <p>
+              Xin lỗi, nội dung này dành cho tài khoản VIP. Mong bạn vui lòng
+              chọn nội dung khác.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container">
+      <!-- <div class="toast">
+        <p class= "message">Bài hát đã được thêm vào danh sách yêu thích</p>
+        <div class="toast-close"><i class="fa-solid fa-circle-xmark"></i></div>
+      </div> -->
+    </div>
+    <div class="overlay lyric hidden">
+      <div class="lyric-song">
+        <button class="btn--close-modal">&times;</button>
+        <div class="lyric-container">
+          <h3 class="lyric-title">Lời Bài Hát</h3>
+          <div class="lyric-word">
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="header">
+      <div class="logo-premium">
+        <img src="https://stc-id.nixcdn.com/v12/static/media/logo.5a1f4537.png" alt="Logo NhacCuaTui" class="logo">
+        <a href="#" class="premium-nav btn">NÂNG CẤP</a>
+      </div>
+      <div class="user">
+        <img src="/f790a73057fd95a3ccec%20(2).c86e1348.jpg" alt="user avatar" class="user-avatar">
+        <p class="user-name">Nguyễn Cảnh Mỹ</p>
+        <i class="fa-solid fa-gear"></i>
+      </div>
+      <nav class="main-nav">
+        <ul class="main-nav-list">
+          <li class="main-nav-btn">
+            <div class="main-nav-item searching-nav" id="search-nav">
+              <i class="fa-solid fa-magnifying-glass search-icon icon-header-kit"></i>
+              <p>Tìm Kiếm</p>
+            </div>
+          </li>
+          <li class="main-nav-btn">
+            <div class="main-nav-item home-nav active-nav" id="home-nav">
+              <i class="fa-solid fa-house house-icon icon-header-kit"></i>
+              <p>Trang Chủ</p>
+            </div>
+          </li>
+          <li class="main-nav-btn">
+            <div class="main-nav-item">
+              <i class="fa-solid fa-compass compass-icon icon-header-kit"></i>
+              <p>Khám Phá</p>
+            </div>
+          </li>
+          <li class="main-nav-btn">
+            <div class="main-nav-item">
+              <i class="fa-solid fa-headset headphone-icon headphone-icon--md icon-header-kit"></i>
+              <p>Nghe Gì Hôm Nay</p>
+            </div>
+          </li>
+          <li class="main-nav-btn">
+            <div class="main-nav-item">
+              <i class="fa-sharp fa-solid fa-chart-simple chart-icon icon-header-kit"></i>
+              <p>BXH NCT</p>
+            </div>
+          </li>
+          <li class="main-nav-btn">
+            <div class="main-nav-item">
+              <i class="fa-solid fa-music music-icon icon-header-kit"></i>
+              <p>Music 4U</p>
+            </div>
+          </li>
+        </ul>
+        <h3 class="library-heading">THƯ VIỆN</h3>
+        <ul class="main-nav-list">
+          <li class="main-nav-btn">
+            <div class="main-nav-item cloud-nav " id="love-nav">
+              <p>Bài Hát Yêu Thích</p>
+            </div>
+          </li>
+          <li class="main-nav-btn history-listen-nav">
+            <div class="main-nav-item">
+              <p>Lịch Sử</p>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="left-sidebar">
+      <div class="left-sidebar-container">
+        <div class="playlist-side my-scroll hidden">
+          <div class="playlistItems">
+            <div class="icon-hide-playlist-side">
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="playlist-onplay playlist-item">
+              <h2 class="playlist-descript">Đang Phát</h2>
+              <div class="song-list-item song-list-item-leftside">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--home"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <div class="song-item-img">
+                    <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                  </div>
+                  <div>
+                    <div class="link-subject song-item-name song-item-name-leftside">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </div>
+                    <div class="singer-name leftside-singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="playlist-waiting playlist-item hidden">
+              <h2 class="playlist-descript">Danh sách chờ phát</h2>
+              <div class="playlist-item-border"></div>
+              <!-- <div class="song-list-item song-list-item-leftside queue-list">
+                <div class="song-options hidden">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                    <li class="song-option-item">
+                      <i class="fa-regular fa-square-plus"></i>
+                      <p class="add-to">Xóa Khỏi chờ phát</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <div>
+                    <div class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </div>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+            <div class="playlist-play playlist-item">
+              <!-- <h2 class="playlist-descript">Danh sách bài hát</h2>
+              <div class="playlist-item-border"></div>
+              <div class="list-item">
+                <div
+                  class="song-list-item song-list-item-leftside song-list-item--data"
+                >
+                  <div class="song-options">
+                    <ul class="song-option-list">
+                      <li class="song-option-item">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p class="add-to">Thêm vào cloud</p>
+                      </li>
+                      <li class="song-option-item">
+                        <i class="fa-regular fa-square-plus"></i>
+                        <p class="add-to">Thêm vào chờ phát</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="icon-more-option">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                  <div class="song-item-content">
+                    <div>
+                      <div class="link-subject song-item-name">
+                        Tình Yêu Đâu Phải Phép Toán
+                      </div>
+                      <div class="singer-name">
+                        <a href="#" class="link-singer">Daa Major</a>
+                        <a href="#" class="link-singer">Daa Major</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="left-side-description">
+          <div class="left-side-song-des">
+            <div class="left-side-img-container">
+              <img src="https://stc-id.nixcdn.com/v12/static/media/default_player3.3709ec1a.jpg" alt="Song play image" class="left-side-img">
+            </div>
+            <p href="#" class="well-come-message">
+              Thưởng thức những giai điệu theo cách riêng của bạn
+            </p>
+            <!-- <a href="#" class="song-play-singer"
+              ><span class="common-link">MONO</span>
+              <span class="common-link">Onionn</span>
+            </a> -->
+          </div>
+        </div>
+        <div class="left-side-album">
+          <span class="left-side-album-text"></span>
+        </div>
+        <div class="well-come-to-play hidden">
+          <div class="img-well-come">
+            <img src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2014/08/15/b/1/4/9/1408076935055_600.jpg" alt="">
+          </div>
+          <h3 class="well-come-text">
+            Chào mừng bạn đến với NhacCuaTui, vui lòng chọn album hoặc bài hát
+            để thưởng thức
+          </h3>
+        </div>
+        <div class="left-side-control"></div>
+        <div class="left-side-song-control">
+          <div class="list-control">
+            <div class="control-volumn">
+              <div class="volumn-icon-wrapper">
+                <div class="volumn-icon-contain volumn-icon--unmute">
+                  <i class="fa-solid fa-volume-high volumn-icon"></i>
+                </div>
+                <div class="volumn-icon-contain volumn-icon--mute hidden">
+                  <i class="fa-solid fa-volume-xmark volumn-icon--mute"></i>
+                </div>
+              </div>
+              <div class="volumn-input">
+                <input type="range" id="volume-slider" max="100" value="100">
+              </div>
+            </div>
+            <button class="btn-control-list">Danh sách phát</button>
+            <div class="option-icon-wrapper">
+              <i class="fa-solid fa-ellipsis-vertical option-icon"></i>
+            </div>
+          </div>
+          <div class="list-control time-control">
+            <div class="time-passed-container">
+              <p class="time-passed">00:00</p>
+              <p class="time-song">04:12</p>
+            </div>
+            <div class="control-slider">
+              <div class="slider-rail">
+                <input class="input-slider" type="range" id="seek-slider" max="100" value="0">
+              </div>
+              <!-- <div class="slider-track"></div>
+              <div class="slider-step"></div> -->
+            </div>
+          </div>
+          <div class="list-control">
+            <div class="random">
+              <i class="fa-solid fa-shuffle"></i>
+            </div>
+            <div class="prev-song">
+              <i class="fa-solid fa-backward-fast"></i>
+            </div>
+            <div class="play-pause-song ">
+              <div class="play-song ">
+                <i class="fa-solid fa-play"></i>
+              </div>
+              <div class="pause-song show">
+                <i class="fa-solid fa-pause"></i>
+              </div>
+            </div>
+            <div class="next-song">
+              <i class="fa-solid fa-forward-fast"></i>
+            </div>
+            <!--  -->
+            <div class="loop-song">
+              <!-- loop-alist-song loop-1-song -->
+              <i class="fa-solid fa-arrow-rotate-left"></i>
+              <div class="loop-1">
+                <i class="fa-solid fa-1"></i>
+              </div>
+            </div>
+          </div>
+          <div class="left-song-quality">
+            <button>128kbps</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="wrapper-container">
+      <section class="main-content home-main main-content--active">
+        <div class="slider-container">
+          <div class="main-container">
+            <div class="slider">
+              <div class="slider-top">
+                <img class="slide-active" src="/1663657310678.1b846e3a.jpg" alt="">
+              </div>
+              <div class="slider-top">
+                <img src="/1663744981720.78e267e3.jpg" alt="">
+              </div>
+              <div class="slider-top">
+                <img src="/1663844245673.015d8d70.jpg" alt="">
+              </div>
+              <div class="slider-top">
+                <img src="/1663899594569.7ac1a5f6.jpg" alt="">
+              </div>
+              <!-- <div class="slider-top"></div>
+              <div class="slider-top"></div> -->
+            </div>
+            <div class="slide-scrolls">
+              <button class="slide-prev">
+                <i class="fa-solid fa-chevron-left icon-scroll"></i>
+              </button>
+              <button class="slide-next">
+                <i class="fa-solid fa-chevron-right icon-scroll"></i>
+              </button>
+            </div>
+            <div class="container-dot"></div>
+          </div>
+
+        </div>
+        <div class="home-gallery">
+          <div class="topic-event">
+            <div class="home-item">
+              <h2 class="topic-description header-second">
+                Tiêu Điểm Trong Tuần
+              </h2>
+              <div class="control-slick">
+                <div class="control-left">
+                  <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="control-right">
+                  <i class="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+
+              <div class="spot-gallery slick-list">
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+              </div>
+            </div>
+            <div class="home-item">
+              <h2 class="topic-description header-second">
+                Tiêu Điểm Trong Tuần
+              </h2>
+              <div class="control-slick">
+                <div class="control-left">
+                  <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="control-right">
+                  <i class="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+
+              <div class="spot-gallery slick-list">
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+              </div>
+            </div>
+            <div class="home-item">
+              <h2 class="topic-description header-second">
+                Tiêu Điểm Trong Tuần
+              </h2>
+              <div class="control-slick">
+                <div class="control-left">
+                  <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="control-right">
+                  <i class="fa-solid fa-angle-right"></i>
+                </div>
+              </div>
+
+              <div class="spot-gallery slick-list">
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+                <div class="spot-item slick-item">
+                  <div class="spot-item-container">
+                    <button class="home-play-btn">
+                      <i class="fa-solid fa-play"></i>
+                    </button>
+
+                    <div class="spot-img-play">
+                      <img src="/1663758109377_300.3089fc75.jpg" alt="">
+                    </div>
+                  </div>
+                  <h3 class="header-third">Rising Hits</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-new-song home-item-pad">
+            <h2 class="header-second header-second--pad">Mới Phát Hành</h2>
+            <div class="new-songs-container">
+              <div class="new-song-content">
+                <div class="new-song-content-item">
+                  <div class="new-song-img">
+                    <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                  </div>
+                  <div class="new-song-description">
+                    <a href="#" class="new-song-name header-third">Đáp Án Cuối Cùng</a>
+                    <div class="new-song-singer">
+                      <div class="singer-avatar-container">
+                        <img src="https://static2.yan.vn/YanNews/2167221/201906/hot-boy-cover-quan-ap-la-ai-57d0aa6e.jpg" alt="">
+                      </div>
+                      <a href="#" class="common-link">Quân A.P</a>
+                    </div>
+                    <div class="song-date-release">
+                      <i class="fa-solid fa-calendar-days"></i>
+                      <span> Ngày phát hành: 24/09/2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="new-songs-list">
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+                <div class="new-song-item">
+                  <button class="button-play-album">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/16/0/2/1/c/1663300860128_300.jpg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-songs-ranking home-item-pad">
+            <h2 class="header-second header-second--pad">BXH Bài Hát</h2>
+            <div class="ranking-containter">
+              <!-- <div class="ranking-item">
+                <div class="ranking-img-list">
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                </div>
+                <div class="ranking-background ranking-bg-item-1">
+                  <p class="ranking-name">VIỆT NAM</p>
+                </div>
+                <div class="ranking-song-content">
+                  <h3 class="ranking-song-name">Waiting For You</h3>
+                  <div class="ranking-song-singer">
+                    <a class="common-link" href="#">MONO</a>
+                  </div>
+                  <button>Xem tất cả</button>
+                  <p class="ranking-position">#1</p>
+                </div>
+              </div>
+              <div class="ranking-item">
+                <div class="ranking-img-list">
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                </div>
+                <div class="ranking-background ranking-bg-item-2">
+                  <p class="ranking-name">Âu Mỹ</p>
+                </div>
+                <div class="ranking-song-content">
+                  <h3 class="ranking-song-name">Waiting For You</h3>
+                  <div class="ranking-song-singer">
+                    <a class="common-link" href="#">MONO</a>
+                  </div>
+                  <button>Xem tất cả</button>
+                  <p class="ranking-position">#1</p>
+                </div>
+              </div>
+              <div class="ranking-item">
+                <div class="ranking-img-list">
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                  <div class="ranking-img-item">
+                    <button class="button-play-album">
+                      <i class="fa-solid fa-circle-play"></i>
+                    </button>
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/08/10/4/8/b/1/1660104031203_300.jpg"
+                      alt=""
+                      class=""
+                    />
+                  </div>
+                </div>
+                <div class="ranking-background ranking-bg-item-3">
+                  <p class="ranking-name">Hàn Quốc</p>
+                </div>
+                <div class="ranking-song-content">
+                  <h3 class="ranking-song-name">Waiting For You</h3>
+                  <div class="ranking-song-singer">
+                    <a class="common-link" href="#">MONO</a>
+                  </div>
+                  <button>Xem tất cả</button>
+                  <p class="ranking-position">#1</p>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="home-video-hot home-item-pad">
+            <h2 class="header-second">Video Hot</h2>
+            <div class="video-list">
+              <!-- <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <a href="#" class="link-subject">We Don't Talk Anymore</a>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <div class="video-duration">2:32</div>
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name"
+                      ><span>Anne Marie</span></a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="video-item">
+                <div class="item-container-play">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+  
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/mv/2022/09/26/8/3/9/b/1664198259545_640.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="video-content">
+                  <h3 class="link-subject">We Don't Talk Anymore</h3>
+                  <div class="video-singer">
+                    <a href="#" class="video-singer-name">Anne Marie</a>
+                  </div>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="home-songs home-item-pad">
+            <h2 class="header-second">Bài Hát</h2>
+            <div class="home-song-list">
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-number-listen">
+                  <i class="fa-solid fa-headset headphone-icon headphone-icon--number"></i>
+                  <p class="number-listening">158.9K</p>
+                </div>
+                <div class="song-item-img">
+                  <img src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg" alt="">
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-item-content">
+                  <h3 class="link-subject song-item-name">
+                    Tình Yêu Đâu Phải Phép Toán
+                  </h3>
+                  <div class="singer-name">
+                    <a href="#" class="link-singer">Daa Major</a>
+                    <a href="#" class="link-singer">Daa Major</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-hot-subject home-item-pad">
+            <h2 class="header-second">Chủ Đề Hot</h2>
+            <div class="hot-subject-container">
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/topic/image-1440/2020/06/19/e/d/d/3/1592557503962_640.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="home-top-subject home-item-pad">
+            <h2 class="header-second">Top 100</h2>
+            <div class="top-subject-container">
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="hot-subject-item">
+                <div class="spot-item-container">
+                  <div class="spot-img-play">
+                    <img src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="main-content search-main">
+        <div class="searching-header">
+          <div class="input-field">
+            <form class="input-search">
+              <input class="search-field" type="text" placeholder="Tìm kiếm ...">
+            
+            <div class="icon-searching">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </form></div>
+        </div>
+        <div class="searching-container">
+          <div class="top-searching-word">
+            <h2 class="top-word-head header-second">Top Từ Khóa</h2>
+            <div class="searching-list">
+              <ul class="searching-list-item">
+                <!-- <li class="searching-item">
+                  <div><span>#1</span>SKY DECADE (EP)</div>
+                </li>
+                <li class="searching-item">
+                  <div><span>#2</span>Loser - charlie Puth</div>
+                </li>
+                <li class="searching-item">
+                  <div><span>#3</span>Sơn Tùng</div>
+                </li>
+                <li class="searching-item">
+                  <div><span>#3</span>Sơn Tùng</div>
+                </li>
+                <li class="searching-item">
+                  <div><span>#3</span>Sơn Tùng</div>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+          <div class="history-searching">
+            
+            <p class="delete-all-history">Xóa tất cả</p>
+            <h2 class="history-search-header header-second">
+              Lịch Sử Tìm Kiếm
+            </h2>
+            <ul class="searching-history-list">
+              <!-- <li class="searching-history-item">
+                <p>charlie puth</p>
+                <div class="trash-icon">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </li>
+              <li class="searching-history-item">
+                <p>sơn tùng</p>
+                <div class="trash-icon">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </li>
+              <li class="searching-history-item">
+                <p>mùa hoa bỏ lại</p>
+                <div class="trash-icon">
+                  <i class="fa-solid fa-trash-can"></i>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+        <div class="searching-results hidden">
+          <div class="recommend-search">
+            <!-- <h2 class="header-second recommend-search-header">Top Tìm Kiếm</h2>
+            <div class="recommend-container">
+               <div
+                class="spot-item-container item-container-play recommend-item"
+              >
+                <button class="home-play-btn">
+                  <i class="fa-solid fa-circle-play"></i>
+                </button>
+
+                <div class="spot-img-play">
+                  <img
+                    src="https://avatar-ex-swe.nixcdn.com/playlist/2020/09/16/e/1/f/f/1600250531723_300.jpg"
+                    alt=""
+                  />
+                </div>
+                <button class="spot-item-onplay-btn">
+                  <i class="fa-solid fa-headphones"></i>
+                </button>
+              </div>
+              <div class="recommend-content">
+                <p class="recommend-stt">#1</p>
+                <p class="recommend-name">Top songs: Sơn Tùng MTP</p>
+                <p class="recommend-artist">Sơn Tùng</p>
+                <p class="recommend-type">PLAYLIST</p>
+              </div> 
+            </div> -->
+          </div>
+          <div class="search-song search-item--pad">
+             <h2 class="header-second">Top Tìm Kiếm</h2>
+            <div class="search-song-container">
+              <!-- <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="song-list-item">
+                <div class="song-options">
+                  <ul class="song-option-list">
+                    <li class="song-option-item">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <p class="add-to">Thêm vào cloud</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="icon-more-option">
+                  <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <div class="song-home-item-content song-item-content">
+                  <div class="song-item-img">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                      alt=""
+                    />
+                  </div>
+
+                  <div>
+                    <h3 class="link-subject song-item-name">
+                      Tình Yêu Đâu Phải Phép Toán
+                    </h3>
+                    <div class="singer-name">
+                      <a href="#" class="link-singer">Daa Major</a>
+                      <a href="#" class="link-singer">Daa Major</a>
+                    </div>
+                  </div>
+                </div>
+              </div>  -->
+            </div>
+          </div>
+          <div class="search-video">
+            <!-- <h2 class="header-second search-video-header">Bài Hát</h2>
+            <div class="search-video-container">
+              <div class="spot-item video-search-item">
+                <div
+                  class="spot-item-container item-container-play video-search-item-container"
+                >
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="header-third">Rising Hits</h3>
+              </div>
+              <div class="spot-item video-search-item">
+                <div class="spot-item-container">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="header-third">Rising Hits</h3>
+              </div>
+              <div class="spot-item video-search-item">
+                <div class="spot-item-container">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="header-third">Rising Hits</h3>
+              </div>
+              <div class="spot-item video-search-item">
+                <div class="spot-item-container">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="header-third">Rising Hits</h3>
+              </div>
+              <div class="spot-item video-search-item">
+                <div class="spot-item-container">
+                  <button class="home-play-btn">
+                    <i class="fa-solid fa-circle-play"></i>
+                  </button>
+
+                  <div class="spot-img-play">
+                    <img
+                      src="https://avatar-ex-swe.nixcdn.com/playlist/2022/09/26/b/f/5/1/1664159512042_300.jpg"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <h3 class="header-third">Rising Hits</h3>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div></section>
+      <section class="main-content love-main ">
+        <h2 class="love-main-header">Playlist bài hát yêu thích</h2>
+        <div class="love-song-header">
+
+            <div class="spot-item-container item-container-play header-list-song-love ">
+  
+            <div class="spot-img-play">
+              <img class="love-playlist-img" src="https://stc-id.nixcdn.com/v12/static/media/default_personal_playlist.5f37f4f5.png" alt="">
+            </div>
+          </div>
+          <div class="playlist-love-des">
+            <div class="playlist-love-header">
+              <div class="playlist-header">
+                <h3 class="play-all">Phát Tất Cả</h3>
+                <button class="love-song-play-btn">
+                  <i class="fa-solid fa-circle-play"></i>
+                </button>
+              </div>
+              <!-- <p class="number-of-song">0 bài hát</p> -->
+
+            </div>
+            <div class="person-created">
+              <img class="user-avatar user-avatar-main" src="/f790a73057fd95a3ccec%20(2).c86e1348.jpg" alt="">
+              <div class="created-by">
+                <p class="created-header">Tạo bởi</p>
+                <h2 class="create-person">NGUYỄN CẢNH MỸ</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="love-song-list">
+          <!-- <h2 class="love-song-list-header header-second">Danh Sách Bài Hát Yêu Thích</h2> -->
+          <div class="love-song-list-descript">
+            <p>BÀI HÁT</p>
+            <p>NGHỆ SỸ</p>
+            <p>THỜI GIAN</p>
+          </div>
+          <ul class="love-song-list-container">
+            <!-- <div class="song-list-item love-song-list-item">
+                <div class="love-song-list-item-container">
+
+                  <div class="song-options">
+                    <ul class="song-option-list">
+                      <li class="song-option-item">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p class="add-to">Xóa khỏi yêu thích</p>
+                      </li>
+                      <li class="song-option-item">
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                        <p class="add-to">Lời bài hát</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="icon-more-option">
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </div>
+                  <div class="song-home-item-content song-item-content">
+                    <div class="song-item-img">
+                      <img class ="love-song-item-img"
+                        src="https://avatar-ex-swe.nixcdn.com/song/2022/09/14/4/b/b/7/1663138672596_300.jpg"
+                        alt=""
+                      />
+                    </div>
+    
+                    <div>
+                      <h3 class="link-subject song-item-name love-song-item-name">
+                        Tình Yêu Đâu Phải Phép Toán
+                      </h3>
+                       <div class="singer-name">
+                        <a href="#" class="link-singer">Daa Major</a>
+                        <a href="#" class="link-singer">Daa Major</a>
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+                <div class="singer-name love-song-singer-name">
+                  <a href="#" class="link-singer">Daa Major</a>
+                  <a href="#" class="link-singer">Daa Major</a>
+                </div>
+                <div class="love-song-time"><p class="love-song-time-num">4:30</p></div>
+              </div> -->
+
+          </ul>
+        </div>
+
+      </section>
+      <section class="footer">
+        <div class="footer-container">
+          <div class="footer-heading">
+            <ul class="heading-left-list">
+              <li class="heading-left-item">
+                <a href="#">Giới thiệu</a>
+              </li>
+              <li class="heading-left-item"><a href="#">SP-DV</a></li>
+              <li class="heading-left-item"><a href="#">Hỗ trợ</a></li>
+              <li class="heading-left-item">
+                <a href="#">Thỏa thuận sử dụng</a>
+              </li>
+            </ul>
+            <ul class="footer-social-list">
+              <li class="footer-social-item social-network">
+                <a href="#"><i class="fa-brands fa-square-facebook"></i></a>
+              </li>
+              <li class="footer-social-item social-network">
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+              </li>
+              <li class="footer-social-item social-store">
+                <a href="">
+                  <img src="/apple.0b11f9aa.png" alt="">
+                </a>
+              </li>
+              <li class="footer-social-item social-store">
+                <a href="">
+                  <img src="/google.4609812d.png" alt="">
+                </a>
+              </li>
+              <li class="footer-social-item social-store">
+                <a href="">
+                  <img src="/huawei.eae81f3a.png" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-about">
+            <div class="license-img-list">
+              <img src="https://stc-id.nixcdn.com/v12/images/Cong_Thuong.svg" alt="">
+              <img src="https://stc-id.nixcdn.com/v12/images/DMCA.svg" alt="">
+            </div>
+            <div class="copy-right">
+              <div class="copy-right-logo">
+                <img src="https://stc-id.nixcdn.com/v12/images/logo-nctc.svg" alt="">
+              </div>
+              <div class="copy-right-about">
+                <h3 class="company-name">CÔNG TY CỔ PHẦN NCT</h3>
+                <p class="company-ceo-name">
+                  Chủ sở hữu website: Ông Nhan Thế Luân
+                </p>
+              </div>
+            </div>
+            <div class="copy-license">
+              <ul class="license-list">
+                <li class="license">
+                  Giấy phép MXH số 499/GP-BTTTT do Bộ Thông Tin và Truyền thông
+                  cấp ngày 28/09/2015.
+                </li>
+                <li class="license">
+                  Giấy Chứng nhận Đăng ký Kinh doanh số 0305535715 do Sở kế
+                  hoạch và Đầu tư Tp.Hồ Chí Minh cấp ngày 01/03/2008.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer-address">
+          <i class="fa-solid fa-location-dot"></i>
+          <a href="#" class="address-detail">
+            Tòa nhà The 678 Tower, 67 Hoàng Văn Thái, P.Tân Phú, Q.7, TP.HCM
+          </a>
+          <i class="fa-solid fa-phone"></i>
+          <a href="#" class="phone-number">(028) 3868 7979</a>
+        </div>
+      </section>
+    </div>
+    <div class="audio-container"></div>
+    <audio src="#" preload="auto"></audio>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --regular-size: 1.3rem;
+  --color-main: #f4f6f8e0;
+  --color-second: #f4f6f880;
+  --color-third: #2daaed;
+  --color-border: rgb(53, 63, 73);
+  --disable-color: rgba(244, 246, 248, 0.2);
+  --hightlight-color: rgba(244, 246, 248, 0.05);
+  --control-background-color: #212a35;
+}
+html {
+  /* default 16px, change 1 rem = 10px */
+  /* percentage of user's browser font-size setting */
+  font-size: 62.5%;
+  /* overflow-x: hidden; */
+  /* height: 100vh; */
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #f4f6f8e0;
+  background-color: #1d2631;
+  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  /* height: 100vh; */
+  /* height: 100%; */
+  /* display: flex;
+  flex-direction: column; */
+}
