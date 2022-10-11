@@ -498,8 +498,3 @@ const controlNav = function () {
 initHome();
 controlNav();
 initGlobal();
-
-const newFeature = () => {
-  console.log('well come');
-};
-newFeature();
