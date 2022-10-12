@@ -1024,14 +1024,14 @@
 }
 
 .home-song-list, .search-song-container {
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: .4rem 1.6rem;
   display: grid;
 }
 
 .song-list-item {
-  width: 100%;
+  min-width: 0;
   background-color: #212a35;
   border-radius: 4px;
   padding: 8px;
@@ -1124,10 +1124,14 @@
   background-color: #17202b;
   border-radius: 3px;
   position: absolute;
-  top: -63%;
+  top: -106%;
   right: 2%;
   box-shadow: 0 4px 8px #0003;
   z-index: 5 !important;
+}
+
+.song-options.song-options--love {
+  top: -185%;
 }
 
 .song-option-list {
@@ -1197,7 +1201,8 @@
 }
 
 .song-item-content.song-home-item-content {
-  padding: 0;
+  max-width: 100%;
+  padding: 0 70px 0 0;
 }
 
 .home-hot-subject {

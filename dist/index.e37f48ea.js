@@ -7256,7 +7256,7 @@ class loveSongListView extends (0, _viewJsDefault.default) {
         <div class="song-list-item love-song-list-item song-list-item--data" id="${song.key}" data-order="${i}">
         <div class="love-song-list-item-container">
     
-          <div class="song-options hidden ">
+          <div class="song-options hidden song-options--love ">
             <ul class="song-option-list">
               <li class="song-option-item song-options--remove-love">
               <i class="fa-solid fa-trash-can"></i>

@@ -29,7 +29,7 @@ class loveSongListView extends View {
         }" data-order="${i}">
         <div class="love-song-list-item-container">
     
-          <div class="song-options hidden ">
+          <div class="song-options hidden song-options--love ">
             <ul class="song-option-list">
               <li class="song-option-item song-options--remove-love">
               <i class="fa-solid fa-trash-can"></i>

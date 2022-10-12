@@ -1016,7 +1016,10 @@
 .home-song-list,
 .search-song-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
+  /* display: flex;
+  flex-wrap: wrap;
+  flex: 50%; */
   column-gap: 1.6rem;
   row-gap: 0.4rem;
   align-items: center;
@@ -1025,7 +1028,7 @@
 .song-list-item {
   position: relative;
   display: flex;
-  width: 100%;
+  min-width: 0;
   padding: 8px;
   background-color: #212a35;
   border-radius: 4px;
@@ -1105,7 +1108,7 @@
 }
 .song-options {
   position: absolute;
-  top: -63%;
+  top: -106%;
   right: 2%;
   z-index: 5 !important;
   width: 17.2rem;
@@ -1114,7 +1117,9 @@
   /* overflow: hidden; */
   box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
 }
-
+.song-options.song-options--love {
+  top: -185%;
+}
 .song-option-list {
   list-style: none;
 }
@@ -1171,6 +1176,8 @@
 
 .song-item-content.song-home-item-content {
   padding: 0;
+  max-width: 100%;
+  padding-right: 70px;
 }
 /* *************************** */
 /*        FOOTER               */
