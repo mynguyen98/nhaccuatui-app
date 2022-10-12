@@ -7146,8 +7146,8 @@ class historySearchView extends (0, _viewJsDefault.default) {
             <ul class="searching-history-list">
             ${this._data.map((keyword, i)=>{
             return `
-                  <li class="searching-history-item " data-order="${i}" id="${keyword}">
-                  <p class="searching-keyword">${keyword}</p>
+                  <li class="searching-history-item " data-order="${i}" >
+                  <p class="searching-keyword"  id="${keyword}">${keyword}</p>
                   <div class="trash-icon">
                     <i class="fa-solid fa-trash-can"></i>
                   </div>
