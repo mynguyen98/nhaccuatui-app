@@ -170,15 +170,15 @@ class ContronPlayView {
     let currentVolumn;
     volumeUnmute.addEventListener('click', () => {
       currentVolumn = audio.volume;
-      console.log(currentVolumn);
+      // console.log(currentVolumn);
       this.volumnChangeMute();
-      console.log(currentVolumn);
+      // console.log(currentVolumn);
       volumeSlider.value = 0;
       // audio.volume = 0;
     });
     volumemute.addEventListener('click', () => {
       this.volumnChangeUnmute();
-      console.log(currentVolumn);
+      // console.log(currentVolumn);
       volumeSlider.value = currentVolumn * 100;
       // audio.volume = currentVolumn;
     });
