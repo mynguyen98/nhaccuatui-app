@@ -1534,7 +1534,8 @@
 }
 
 .song-option-item--lyric i {
-  font-size: 1.2rem;
+  margin: 0 1px;
+  font-size: 1.5rem;
 }
 
 .song-option-item--cloud i, .song-options--remove-love i {

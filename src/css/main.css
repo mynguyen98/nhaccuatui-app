@@ -1492,7 +1492,8 @@
   margin-bottom: 1rem;
 }
 .song-option-item--lyric i {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  margin: 0 1px;
 }
 .song-option-item--cloud i {
   font-size: 1.5rem;

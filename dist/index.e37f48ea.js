@@ -969,6 +969,7 @@ const controlNav = function() {
 initHome();
 controlNav();
 initGlobal();
+console.log("wellcome to nhaccuatui made by mynguyen");
 
 },{"core-js/modules/web.immediate.js":"49tUX","regenerator-runtime/runtime":"dXNgZ","./model.js":"Y4A21","./views/songview.js":"boDTA","./views/controlPlayView.js":"byYSU","./views/homeView/showCaseView.js":"gc6H5","./views/homeView/topicEventsView.js":"bokN1","./views/playlistSideView.js":"2GV6u","./views/songOnplayView.js":"64ACV","./views/homeView/newReleaseView.js":"9m4T9","./views/homeView/rankingView.js":"YN9U0","./views/homeView/videoView.js":"etImA","./views/homeView/homeSongView.js":"aKV33","./views/homeView/hotTopicView.js":"6UTeq","./views/homeView/topView.js":"jJP9x","./views/lyricsView.js":"2twQW","./views/waitingSongView.js":"2cgvm","./controlSlide.js":"e1huP","./views/searchView/topKeywordView.js":"6kJkE","./views/searchView/searchView.js":"2uhv5","./views/searchView/recommendView.js":"9MY7T","./views/searchView/resultSongView.js":"889hu","./views/searchView/resultPlaylistView.js":"3e0zU","./views/searchView/historyView.js":"bYSrc","./views/navView.js":"82Kie","./views/loveSongView.js":"fKNDs","./views/nhaccuatuiView/loveSongListView.js":"7EZIG","./views/toastMessageView.js":"bSz4f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"49tUX":[function(require,module,exports) {
 // TODO: Remove this module from `core-js@4` since it's split to modules listed below
