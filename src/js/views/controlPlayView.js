@@ -14,7 +14,7 @@ const currentTimeContainer = document.querySelector('.time-passed');
 const btnLoop = document.querySelector('.loop-song');
 const wellComeEl = document.querySelector('.well-come-to-play');
 
-let currentVolumn;
+// let currentVolumn;
 let oldVolumn;
 class ContronPlayView {
   addHandlerEvent(audio) {
@@ -167,18 +167,20 @@ class ContronPlayView {
     this.volumnClick(audio);
   }
   volumnClick(audio) {
+    let currentVolumn;
     volumeUnmute.addEventListener('click', () => {
       currentVolumn = audio.volume;
+      console.log(currentVolumn);
       this.volumnChangeMute();
       console.log(currentVolumn);
       volumeSlider.value = 0;
-      audio.volume = 0;
+      // audio.volume = 0;
     });
     volumemute.addEventListener('click', () => {
       this.volumnChangeUnmute();
-      // console.log(currentVolumn);
+      console.log(currentVolumn);
       volumeSlider.value = currentVolumn * 100;
-      audio.volume = currentVolumn;
+      // audio.volume = currentVolumn;
     });
   }
 }
