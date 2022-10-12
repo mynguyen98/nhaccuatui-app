@@ -1701,7 +1701,7 @@
 .searching-history-item {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  /* padding: 1rem; */
   color: var(--color-second);
   font-size: 1.4rem;
   font-weight: 500;
@@ -1709,10 +1709,17 @@
   margin-bottom: 1rem;
   cursor: pointer;
   border-radius: 3px;
+  align-items: center;
+  justify-content: center;
+}
+.searching-history-item p {
+  padding: 1rem;
+  width: 100%;
 }
 .searching-history-item div {
   display: none;
   cursor: pointer;
+  padding: 1rem;
 }
 .searching-history-item:hover {
   background-color: var(--hightlight-color);

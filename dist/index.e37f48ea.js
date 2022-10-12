@@ -5831,15 +5831,15 @@ class ContronPlayView {
         let currentVolumn;
         volumeUnmute.addEventListener("click", ()=>{
             currentVolumn = audio.volume;
-            console.log(currentVolumn);
+            // console.log(currentVolumn);
             this.volumnChangeMute();
-            console.log(currentVolumn);
+            // console.log(currentVolumn);
             volumeSlider.value = 0;
         // audio.volume = 0;
         });
         volumemute.addEventListener("click", ()=>{
             this.volumnChangeUnmute();
-            console.log(currentVolumn);
+            // console.log(currentVolumn);
             volumeSlider.value = currentVolumn * 100;
         // audio.volume = currentVolumn;
         });
@@ -7146,8 +7146,8 @@ class historySearchView extends (0, _viewJsDefault.default) {
             <ul class="searching-history-list">
             ${this._data.map((keyword, i)=>{
             return `
-                  <li class="searching-history-item searching-keyword" data-order="${i}" id="${keyword}">
-                  <p>${keyword}</p>
+                  <li class="searching-history-item " data-order="${i}" id="${keyword}">
+                  <p class="searching-keyword">${keyword}</p>
                   <div class="trash-icon">
                     <i class="fa-solid fa-trash-can"></i>
                   </div>

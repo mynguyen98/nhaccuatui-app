@@ -1756,16 +1756,22 @@
   background-color: var(--control-background-color);
   cursor: pointer;
   border-radius: 3px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 1rem;
-  padding: 1rem;
   font-size: 1.4rem;
   font-weight: 500;
   display: flex;
 }
 
+.searching-history-item p {
+  width: 100%;
+  padding: 1rem;
+}
+
 .searching-history-item div {
   cursor: pointer;
+  padding: 1rem;
   display: none;
 }
 

@@ -39,8 +39,8 @@ class historySearchView extends View {
             ${this._data
               .map((keyword, i) => {
                 return `
-                  <li class="searching-history-item searching-keyword" data-order="${i}" id="${keyword}">
-                  <p>${keyword}</p>
+                  <li class="searching-history-item " data-order="${i}" id="${keyword}">
+                  <p class="searching-keyword">${keyword}</p>
                   <div class="trash-icon">
                     <i class="fa-solid fa-trash-can"></i>
                   </div>
