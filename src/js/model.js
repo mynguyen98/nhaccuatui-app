@@ -10,7 +10,7 @@ import {
   getTrendingArtists,
   getTopics,
   getTopicDetail,
-} from 'nhaccuatui-api-full';
+} from './nhaccuatui-api-full-fixed/index.js';
 import toastMessageView from './views/toastMessageView.js';
 
 export const state = {

@@ -2683,7 +2683,7 @@ parcelHelpers.export(exports, "addToLoveSong", ()=>addToLoveSong);
 parcelHelpers.export(exports, "removeLoveSong", ()=>removeLoveSong);
 parcelHelpers.export(exports, "initLoveSong", ()=>initLoveSong);
 // import nhaccuatui from 'nhaccuatui-api-full';
-var _nhaccuatuiApiFull = require("nhaccuatui-api-full");
+var _indexJs = require("./nhaccuatui-api-full-fixed/index.js");
 var _toastMessageViewJs = require("./views/toastMessageView.js");
 var _toastMessageViewJsDefault = parcelHelpers.interopDefault(_toastMessageViewJs);
 const state = {
@@ -2777,7 +2777,7 @@ const waitData = async (getData, key)=>{
 };
 const loadSong = async function(id) {
     try {
-        const songData = await waitData((0, _nhaccuatuiApiFull.getSong), id);
+        const songData = await waitData((0, _indexJs.getSong), id);
         if (songData.status === "error") throw new Error(`${songData.error.message}`);
         let { song  } = songData;
         state.song = createSongObject(song);
@@ -2789,7 +2789,7 @@ const loadSong = async function(id) {
 };
 const loadLyric = async function(id) {
     try {
-        const lyricData = await waitData((0, _nhaccuatuiApiFull.getLyric), id);
+        const lyricData = await waitData((0, _indexJs.getLyric), id);
         if (lyricData.status === "error") throw new Error(`${lyricData.error.message}`);
         let { lyric  } = lyricData;
         if (lyric.lyric === "") state.lyric = "Lời b\xe0i h\xe1t chưa được cập nhật";
@@ -2800,7 +2800,7 @@ const loadLyric = async function(id) {
 };
 const getLinkSong = async function(id) {
     try {
-        const song = await waitData((0, _nhaccuatuiApiFull.getSong), id);
+        const song = await waitData((0, _indexJs.getSong), id);
         if (song.status === "error") throw new Error(`${song.error.message}`);
         return song.song.streamUrls.length > 0 ? song.song.streamUrls[0].streamUrl : undefined;
     } catch (err) {
@@ -2815,7 +2815,7 @@ const loadHome = async function() {
         //   homeData = await getHome();
         //   isOk = homeData.status;
         // }
-        homeData = await waitData((0, _nhaccuatuiApiFull.getHome));
+        homeData = await waitData((0, _indexJs.getHome));
         if (homeData.status === "error") throw new Error(homeData.error.message);
         state.home = homeData;
     } catch (err) {
@@ -2824,7 +2824,7 @@ const loadHome = async function() {
 };
 const loadHomeSong = async function(songs) {
     const songsPlay = await Promise.all(songs.map(async (song)=>{
-        const songPlay = await waitData((0, _nhaccuatuiApiFull.getSong), song.key);
+        const songPlay = await waitData((0, _indexJs.getSong), song.key);
         return songPlay.song;
     }));
     state.home.songsHome = songsPlay;
@@ -2840,9 +2840,9 @@ const getRankingData = (data)=>{
 };
 const loadRankingList = async function() {
     try {
-        const vnRank = await waitData((0, _nhaccuatuiApiFull.getPlaylistDetail), "taNakaGUJ7k9");
-        const koreanRank = await waitData((0, _nhaccuatuiApiFull.getPlaylistDetail), "aUBTYVhm6Aqf");
-        const usRank = await waitData((0, _nhaccuatuiApiFull.getPlaylistDetail), "S5neMcFsBED5");
+        const vnRank = await waitData((0, _indexJs.getPlaylistDetail), "taNakaGUJ7k9");
+        const koreanRank = await waitData((0, _indexJs.getPlaylistDetail), "aUBTYVhm6Aqf");
+        const usRank = await waitData((0, _indexJs.getPlaylistDetail), "S5neMcFsBED5");
         const vn = getRankingData(vnRank);
         const korean = getRankingData(koreanRank);
         const us = getRankingData(usRank);
@@ -2858,12 +2858,12 @@ const loadRankingList = async function() {
 };
 const loadPlaylist = async function(key) {
     try {
-        const playlistData = await waitData((0, _nhaccuatuiApiFull.getPlaylistDetail), key);
+        const playlistData = await waitData((0, _indexJs.getPlaylistDetail), key);
         if (playlistData.status === "error") throw new Error(playlistData.error.message);
         let playlist = playlistData.playlist;
         // get each song from playlist
         const songsPlay = await Promise.all(playlist.songs.map(async (song)=>{
-            const songPlay = await waitData((0, _nhaccuatuiApiFull.getSong), song.key);
+            const songPlay = await waitData((0, _indexJs.getSong), song.key);
             return songPlay;
         }));
         // format the infor of song that needed
@@ -2900,7 +2900,7 @@ const isEmpty = function(obj) {
 };
 const loadSearchKeyword = async function(key) {
     try {
-        const data = await waitData((0, _nhaccuatuiApiFull.searchByKeyword), key);
+        const data = await waitData((0, _indexJs.searchByKeyword), key);
         /////////////////CLEAR OLD SEARCH RESULT //////////////////////////////////
         state.searchData = {};
         let playlistSearch = data.search.playlist.playlist;
@@ -2932,7 +2932,7 @@ const loadSearchKeyword = async function(key) {
 };
 const loadTopKeyword = async function() {
     try {
-        const kwData = await waitData((0, _nhaccuatuiApiFull.getTopKeyword));
+        const kwData = await waitData((0, _indexJs.getTopKeyword));
         keywords = kwData.listKeyValue.map((data)=>{
             return data.title;
         });
@@ -2972,7 +2972,7 @@ const addToLoveSong = async function(key) {
             return;
         }
         state.clouds.loveSongKey.push(key);
-        let loveSong = await waitData((0, _nhaccuatuiApiFull.getSong), key);
+        let loveSong = await waitData((0, _indexJs.getSong), key);
         updateToLocalLoveSong();
         state.loveSongs.push(createSongObject(loveSong.song));
         (0, _toastMessageViewJsDefault.default).render("Bạn đ\xe3 th\xeam b\xe0i h\xe1t v\xe0o danh s\xe1ch y\xeau th\xedch");
@@ -2988,7 +2988,7 @@ const removeLoveSong = function(order) {
 const loadLoveSong = async function() {
     try {
         state.loveSongs = await Promise.all(state.clouds.loveSongKey.map(async (key)=>{
-            const loveSong = await waitData((0, _nhaccuatuiApiFull.getSong), key);
+            const loveSong = await waitData((0, _indexJs.getSong), key);
             return createSongObject(loveSong.song);
         }));
     } catch (err) {
@@ -3030,7 +3030,91 @@ initLoveSong(); // initLoveSong();
  //   }
  // };
 
-},{"nhaccuatui-api-full":"lLufk","./views/toastMessageView.js":"bSz4f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lLufk":[function(require,module,exports) {
+},{"./views/toastMessageView.js":"bSz4f","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./nhaccuatui-api-full-fixed/index.js":"alDDH"}],"bSz4f":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _viewJs = require("./view.js");
+var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
+class ToastMessageView extends (0, _viewJsDefault.default) {
+    _parentElement = document.querySelector(".toast-container");
+    displayToast(message) {
+        this.render(message);
+        const closeToastEl = document.querySelector(".toast-close");
+        closeToastEl.addEventListener("click", (e)=>{
+            e.target.closest(".toast").remove();
+        });
+    }
+    generateMarkup() {
+        return `
+    <div class="toast">
+    <p class= "message">${this._data}</p>
+    <div class="toast-close"><i class="fa-solid fa-circle-xmark"></i></div>
+  </div>
+    `;
+    }
+}
+exports.default = new ToastMessageView();
+
+},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+class View {
+    _data;
+    render(data) {
+        this._data = data; // copy to work with it more in other function
+        if (!this._data) return;
+        // console.log(this._data);
+        const markup = this.generateMarkup();
+        // console.log(markup);
+        this.clear();
+        this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    renderClearFirst(data) {
+        this._data = data; // copy to work with it more in other function
+        this.clear();
+        if (!this._data) return;
+        // console.log(this._data);
+        const markup = this.generateMarkup();
+        // console.log(markup);
+        this._parentElement.insertAdjacentHTML("afterbegin", markup);
+    }
+    clear() {
+        this._parentElement.innerHTML = "";
+    }
+}
+exports.default = View;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"alDDH":[function(require,module,exports) {
 "use strict";
 var __importDefault = this && this.__importDefault || function(mod) {
     return mod && mod.__esModule ? mod : {
@@ -3043,12 +3127,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.explore = exports.getArtistDetail = exports.exploreArtists = exports.getTrendingArtists = exports.getTopKeyword = exports.searchByKeyword = exports.getTop100 = exports.getChart = exports.getTopicDetail = exports.getTopics = exports.getVideoDetail = exports.getLyric = exports.getPlaylistDetail = exports.getPlaylists = exports.getSong = exports.getHome = void 0;
 const axios_1 = __importDefault(require("axios"));
 const js_sha512_1 = require("js-sha512");
-const PROXY_URL = "https://nct.napdev.workers.dev/";
+// const PROXY_URL = "https://nct.napdev.workers.dev/";
 const API_URL = "https://beta.nhaccuatui.com/api";
 const API_KEY = "e3afd4b6c89147258a56a641af16cc79";
 const SECRET_KEY = "6847f1a4fc2f4eb6ab13f9084e082ef4";
 const client = axios_1.default.create({
-    baseURL: typeof window === "object" ? PROXY_URL + API_URL : API_URL,
+    baseURL: API_URL,
     params: {
         a: API_KEY
     }
@@ -5552,91 +5636,7 @@ var global = arguments[3];
     }
 })();
 
-},{"process":"d5jf4"}],"bSz4f":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _viewJs = require("./view.js");
-var _viewJsDefault = parcelHelpers.interopDefault(_viewJs);
-class ToastMessageView extends (0, _viewJsDefault.default) {
-    _parentElement = document.querySelector(".toast-container");
-    displayToast(message) {
-        this.render(message);
-        const closeToastEl = document.querySelector(".toast-close");
-        closeToastEl.addEventListener("click", (e)=>{
-            e.target.closest(".toast").remove();
-        });
-    }
-    generateMarkup() {
-        return `
-    <div class="toast">
-    <p class= "message">${this._data}</p>
-    <div class="toast-close"><i class="fa-solid fa-circle-xmark"></i></div>
-  </div>
-    `;
-    }
-}
-exports.default = new ToastMessageView();
-
-},{"./view.js":"bWlJ9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bWlJ9":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-class View {
-    _data;
-    render(data) {
-        this._data = data; // copy to work with it more in other function
-        if (!this._data) return;
-        // console.log(this._data);
-        const markup = this.generateMarkup();
-        // console.log(markup);
-        this.clear();
-        this._parentElement.insertAdjacentHTML("afterbegin", markup);
-    }
-    renderClearFirst(data) {
-        this._data = data; // copy to work with it more in other function
-        this.clear();
-        if (!this._data) return;
-        // console.log(this._data);
-        const markup = this.generateMarkup();
-        // console.log(markup);
-        this._parentElement.insertAdjacentHTML("afterbegin", markup);
-    }
-    clear() {
-        this._parentElement.innerHTML = "";
-    }
-}
-exports.default = View;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"boDTA":[function(require,module,exports) {
+},{"process":"d5jf4"}],"boDTA":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _viewJs = require("./view.js");
